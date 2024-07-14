@@ -11,10 +11,12 @@ public class CustomConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
-		// 초반 작업 일단 누구나 로그인 없이 들어올 수 있도록 작업
-		http.csrf().disable();
-		http.authorizeHttpRequests().anyRequest().permitAll();
-		
+		http
+				.csrf(csrf -> csrf.disable()) // csrf 비활성화 설정
+				.authorizeHttpRequests(authz -> authz
+						.anyRequest().permitAll() // 모든 요청 허용
+				);
+
 		return http.build();
 		
 	}
