@@ -16,7 +16,7 @@ public class TestBoardController {
 
     @GetMapping("/testBoard")
     public List<TestBoard> getAllTestBoards() {
-        System.out.println("실행");
+        System.out.println("controller 실행");
         return testBoardService.findAll();
     }
 }
