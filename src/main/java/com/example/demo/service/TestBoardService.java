@@ -14,7 +14,6 @@ public class TestBoardService {
     private TestBoardRepository testBoardRepository;
 
     public List<TestBoard> findAll() {
-        System.out.println("service 실행");
         return testBoardRepository.findAll();
     }
 }
